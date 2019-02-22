@@ -54,9 +54,9 @@ describe('QuizQuestion Component', () => {
 
     let spy2
     try {
-      spy2 = sinon.spy(Quiz.prototype, 'showNextQuestionHandler')
+      spy2 = sinon.spy(Quiz.prototype, 'showNextQuestionHandlerHandler')
     } catch (e) {
-      assert(false, "There's not a method named `showNextQuestionHandler()` in the Quiz class.")
+      assert(false, "There's not a method named `showNextQuestionHandlerHandler()` in the Quiz class.")
     }
 
     let mockedPropHandler = sinon.spy()
@@ -69,7 +69,7 @@ describe('QuizQuestion Component', () => {
 
     let quizQuestion
     try {
-      quizQuestion = shallow(<QuizQuestion quiz_question={mock_prop} showNextQuestionHandlerHandler={spy2} />)
+      quizQuestion = shallow(<QuizQuestion quiz_question={mock_prop} showNextQuestionHandlerHandlerHandler={spy2} />)
     } catch (e) {
       assert(false, "We weren't able to mount the QuizQuestion component.")
     }
@@ -80,6 +80,6 @@ describe('QuizQuestion Component', () => {
       quizQuestion.instance().handleClick('5')
     } catch (e) {
     }
-    assert(spy2.called == true, "`this.props.showNextQuestionHandlerHandler()` is not being called when the `buttonText` is equal to `this.props.quiz_question.answer` in QuizQuestion's `handleClick` method.")
+    assert(spy2.called == true, "`this.props.showNextQuestionHandlerHandlerHandler()` is not being called when the `buttonText` is equal to `this.props.quiz_question.answer` in QuizQuestion's `handleClick` method.")
   })
 })
