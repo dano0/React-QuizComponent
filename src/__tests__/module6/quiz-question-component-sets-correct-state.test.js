@@ -47,9 +47,9 @@ describe('QuizQuestion Component', () => {
 
     let spy2
     try {
-      spy2 = sinon.spy(Quiz.prototype, 'showNextQuestion')
+      spy2 = sinon.spy(Quiz.prototype, 'showNextQuestionHandler')
     } catch (e) {
-      assert(false, "There's not a method named `showNextQuestion()` in the Quiz class.")
+      assert(false, "There's not a method named `showNextQuestionHandler()` in the Quiz class.")
     }
 
     let mockedPropHandler = sinon.spy()
@@ -62,7 +62,7 @@ describe('QuizQuestion Component', () => {
 
     let quizQuestion
     try {
-      quizQuestion = shallow(<QuizQuestion quiz_question={mock_prop} showNextQuestionHandler={spy2} />)
+      quizQuestion = shallow(<QuizQuestion quiz_question={mock_prop} showNextQuestionHandlerHandler={spy2} />)
     } catch (e) {
       assert(false, "We weren't able to mount the QuizQuestion component.")
     }
